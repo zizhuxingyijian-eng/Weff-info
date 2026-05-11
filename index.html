@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="WEFF Showcase Forum 2026 — Waseda Economic and Finance Forum's flagship annual event. B&E Symposium, Pitch Competition, and Networking. 1 August 2026, Waseda University." />
+  <title>WEFF Showcase Forum 2026</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── Navbar ──────────────────────────────────────────── -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar-inner">
+      <a class="navbar-logo" href="#"><span>WEFF</span></a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#program">Program</a></li>
+        <li><a href="#schedule">Schedule</a></li>
+        <li><a href="#register" class="nav-cta">Register</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#about">About</a>
+    <a href="#program">Program</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#register">Register →</a>
+  </div>
+
+  <!-- ── Hero ────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-tag">2026 Spring · Waseda University</div>
+        <h1>WEFF<br><span class="highlight">Showcase Forum</span></h1>
+        <p class="hero-date">
+          <strong>Friday, 1 August 2026</strong> &nbsp;·&nbsp; Waseda University, Tokyo
+        </p>
+
+        <!-- Countdown -->
+        <div class="countdown" id="countdown">
+          <div class="countdown-unit">
+            <div class="countdown-num" id="cd-days">--</div>
+            <div class="countdown-label">Days</div>
+          </div>
+          <div class="countdown-unit">
+            <div class="countdown-num" id="cd-hours">--</div>
+            <div class="countdown-label">Hours</div>
+          </div>
+          <div class="countdown-unit">
+            <div class="countdown-num" id="cd-mins">--</div>
+            <div class="countdown-label">Mins</div>
+          </div>
+          <div class="countdown-unit">
+            <div class="countdown-num" id="cd-secs">--</div>
+            <div class="countdown-label">Secs</div>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <!-- TODO: replace href="#" with the real registration URL when ready -->
+          <a href="#" class="btn btn-primary">Register Now &rarr;</a>
+          <a href="#about" class="btn btn-outline">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── About ────────────────────────────────────────────── -->
+  <section class="section about" id="about">
+    <div class="container">
+      <span class="section-label">About the Event</span>
+      <h2 class="section-title">What is WEFF Showcase Forum?</h2>
+      <p class="section-sub">
+        The WEFF Showcase Forum is our flagship annual event — a platform for external
+        guests, alumni, and partner organisations to see the work our members do in
+        economics, finance, and investment.
+      </p>
+
+      <div class="about-cards">
+        <div class="about-card">
+          <div class="about-icon">🎤</div>
+          <h3>External Showcase</h3>
+          <p>A platform for WEFF members to present research, analysis, and investment pitches to an external audience of professionals and alumni.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">🤝</div>
+          <h3>Networking &amp; Branding</h3>
+          <p>Structured networking with external guests, alumni judges, and partner organisations to build meaningful professional connections.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">🎯</div>
+          <h3>Joint Club Effort</h3>
+          <p>A shared milestone for all WEFF members — from Investment and B&amp;E teams to PR &amp; Comms — working together towards one event.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── What to Expect / Three Pillars ───────────────────── -->
+  <section class="section" id="program">
+    <div class="container">
+      <span class="section-label">Event Program</span>
+      <h2 class="section-title">What to Expect</h2>
+      <p class="section-sub">Three main segments make up the Showcase Forum afternoon.</p>
+
+      <div class="pillars-grid">
+
+        <!-- B&E Symposium -->
+        <div class="pillar-card">
+          <div class="pillar-header">B&amp;E Symposium</div>
+          <div class="pillar-body">
+            <ul class="pillar-highlights">
+              <li>2–3 student research presentations</li>
+              <li>Keynote address by an industry guest</li>
+              <li>Open Q&amp;A and panel discussion</li>
+            </ul>
+            <div class="pillar-meta">
+              Led by WEFF's Business &amp; Economics team.<br>
+              Open to all attendees.
+            </div>
+          </div>
+        </div>
+
+        <!-- Pitch Competition -->
+        <div class="pillar-card">
+          <div class="pillar-header">Pitch Competition</div>
+          <div class="pillar-body">
+            <ul class="pillar-highlights">
+              <li>4 pitches total — 2 from WEFF, 2 from KUTIC</li>
+              <li>Judged by a panel of 4 alumni</li>
+              <li>Live feedback and Q&amp;A after each pitch</li>
+            </ul>
+            <div class="pillar-meta">
+              Led by WEFF's Investment team.<br>
+              Investment &amp; finance focus.
+            </div>
+          </div>
+        </div>
+
+        <!-- Networking Break -->
+        <div class="pillar-card">
+          <div class="pillar-header">Networking Break</div>
+          <div class="pillar-body">
+            <ul class="pillar-highlights">
+              <li>Structured networking for all participants</li>
+              <li>Meet WEFF members, alumni, and guests</li>
+              <li>Refreshments provided</li>
+            </ul>
+            <div class="pillar-meta">
+              Led by PR &amp; Comms team.<br>
+              All participants welcome.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Schedule ──────────────────────────────────────────── -->
+  <section class="section schedule" id="schedule">
+    <div class="container">
+      <span class="section-label">Day Schedule</span>
+      <h2 class="section-title">Friday, 1 August 2026</h2>
+      <p class="section-sub">Full programme for the Showcase Forum day.</p>
+
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th>Time (JST)</th>
+            <th>Activity</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="time-cell">13:00 – 13:30</td>
+            <td class="activity-cell">Registration</td>
+            <td class="desc-cell">Guest check-in and welcome</td>
+          </tr>
+          <tr class="highlight">
+            <td class="time-cell">13:30 – 15:00</td>
+            <td class="activity-cell">B&amp;E Symposium</td>
+            <td class="desc-cell">Guest keynote · 2–3 student presentations · closing Q&amp;A</td>
+          </tr>
+          <tr>
+            <td class="time-cell">15:15 – 15:45</td>
+            <td class="activity-cell">Networking Break</td>
+            <td class="desc-cell">Structured networking for all participants</td>
+          </tr>
+          <tr class="highlight">
+            <td class="time-cell">16:00 – 17:30</td>
+            <td class="activity-cell">Pitch Competition</td>
+            <td class="desc-cell">4 pitches total (2 WEFF · 2 KUTIC) judged by alumni panel</td>
+          </tr>
+          <tr>
+            <td class="time-cell">17:30 – 18:00</td>
+            <td class="activity-cell">Closing Ceremony</td>
+            <td class="desc-cell">Results, remarks, and thank yous</td>
+          </tr>
+          <tr>
+            <td class="time-cell">19:00~</td>
+            <td class="activity-cell">Alumni Dinner</td>
+            <td class="desc-cell">Invitation-only dinner for alumni and VIP guests</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="schedule-note">All times are Japan Standard Time (JST, UTC+9). Programme subject to change.</p>
+    </div>
+  </section>
+
+  <!-- ── Register CTA ──────────────────────────────────────── -->
+  <section class="section register" id="register">
+    <div class="container">
+      <div class="register-badge">Spots are limited</div>
+      <h2 class="section-title">Join Us on 1 August</h2>
+      <p class="section-sub">
+        Whether you're an industry professional, Waseda student, or WEFF alumni —
+        we'd love to see you at Showcase Forum 2026.
+      </p>
+      <!-- TODO: replace href="#" with the real registration URL when ready -->
+      <a href="#" class="btn btn-primary" style="font-size:1rem; padding:16px 36px;">
+        Register Now &rarr;
+      </a>
+    </div>
+  </section>
+
+  <!-- ── Footer ────────────────────────────────────────────── -->
+  <footer>
+    <div class="container">
+      <div class="footer-logo"><span>WEFF</span></div>
+      <p class="footer-sub">Waseda Economic and Finance Forum</p>
+      <p class="footer-sub">Showcase Forum 2026 · 1 August · Waseda University, Tokyo</p>
+      <div class="footer-divider"></div>
+      <p class="footer-copy">&copy; 2026 WEFF. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
