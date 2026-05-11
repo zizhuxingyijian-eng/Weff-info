@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About WEFF — Waseda Economics and Finance Forum. The premier economics and finance organization for international students of Waseda University. Founded 2021, Shinjuku-ku, Tokyo." />
+  <title>About WEFF — Waseda Economics and Finance Forum</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── About page specific ─────────────────────────────── */
+    .about-hero {
+      position: relative;
+      min-height: 70vh;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: 64px;
+      padding-top: 100px;
+      overflow: hidden;
+    }
+    .about-hero-photo {
+      position: absolute;
+      inset: 0;
+      background-color: #2a1a08;
+      /* TODO: uncomment the line below once you add assets/weff-team.jpg to the repo */
+      /* background-image: url('assets/weff-team.jpg'); */
+      background-size: cover;
+      background-position: center top;
+    }
+    .about-hero-photo.has-photo::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(26,26,26,0.92) 0%, rgba(26,26,26,0.45) 60%, rgba(26,26,26,0.2) 100%);
+    }
+    .about-hero-photo:not(.has-photo) {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2a1a08 50%, #3a2010 100%);
+    }
+    .photo-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      color: rgba(255,255,255,0.25);
+      font-size: 0.85rem;
+      text-align: center;
+    }
+    .photo-placeholder svg { opacity: 0.2; }
+    .about-hero-content {
+      position: relative;
+      z-index: 1;
+    }
+    .about-hero-content .hero-tag { margin-bottom: 16px; }
+    .about-hero-content h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .about-hero-content p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 580px;
+    }
+
+    /* Photo credit strip */
+    .photo-credit {
+      background: var(--dark-card);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 0;
+      font-size: 0.78rem;
+      color: #555;
+      text-align: center;
+    }
+
+    /* Stats bar */
+    .stats-bar {
+      background: var(--orange);
+      padding: 24px 0;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+    .stat-item {
+      text-align: center;
+      padding: 0 16px;
+      border-right: 1px solid rgba(255,255,255,0.25);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1;
+    }
+    .stat-desc {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.8);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 4px;
+    }
+
+    /* Mission section */
+    .mission { background: var(--dark); }
+    .mission-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      margin-top: 40px;
+    }
+    .mission-text p {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .mission-text p:last-child { margin-bottom: 0; }
+    .mission-text p strong { color: var(--text); }
+    .mission-facts {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .fact-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      transition: border-color 0.2s;
+    }
+    .fact-row:hover { border-color: var(--orange); }
+    .fact-icon {
+      font-size: 1.3rem;
+      flex-shrink: 0;
+      width: 36px;
+      text-align: center;
+    }
+    .fact-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 2px;
+    }
+    .fact-value {
+      font-size: 0.95rem;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    /* Offerings section */
+    .offerings { background: var(--dark-card); }
+    .offerings-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .offering-card {
+      background: var(--dark-card-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .offering-card:hover { border-color: var(--orange); transform: translateY(-2px); }
+    .offering-num {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--orange);
+      opacity: 0.35;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .offering-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+    .offering-card p { color: var(--muted); font-size: 0.88rem; line-height: 1.6; }
+
+    /* Team photo section */
+    .team-photo-section { background: var(--dark); }
+    .team-photo-wrap {
+      margin-top: 40px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      position: relative;
+      min-height: 400px;
+      background: var(--dark-card-2);
+    }
+    .team-photo-wrap img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .team-photo-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 400px;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
+      padding: 40px;
+    }
+    .team-photo-placeholder .upload-hint {
+      font-size: 0.78rem;
+      color: #555;
+      font-family: monospace;
+      background: #1a1a1a;
+      padding: 6px 12px;
+      border-radius: 4px;
+      margin-top: 4px;
+    }
+
+    /* Social links */
+    .social-section { background: var(--dark-card); }
+    .social-links {
+      display: flex;
+      gap: 16px;
+      margin-top: 32px;
+      flex-wrap: wrap;
+    }
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 24px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      border: 1px solid var(--border);
+      background: var(--dark-card-2);
+      color: var(--text);
+      transition: all 0.2s;
+    }
+    .social-btn:hover { border-color: var(--orange); color: var(--orange); }
+    .social-btn svg { width: 20px; height: 20px; flex-shrink: 0; }
+
+    /* CTA back to event */
+    .back-cta {
+      background: linear-gradient(135deg, #1a1a1a 0%, #261200 100%);
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .stat-item:nth-child(2) { border-right: none; }
+      .stat-item:nth-child(3), .stat-item:nth-child(4) { border-top: 1px solid rgba(255,255,255,0.2); }
+      .mission-grid { grid-template-columns: 1fr; gap: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Navbar ─────────────────────────────────────────── -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar-inner">
+      <a class="navbar-logo" href="index.html">
+        <img src="assets/weff-logo.svg" alt="WEFF" class="nav-logo-img" />
+        <span>WEFF</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Showcase Forum</a></li>
+        <li><a href="about.html" style="color:var(--text)">About WEFF</a></li>
+        <li><a href="https://www.instagram.com/waseda.weff/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="index.html#register" class="nav-cta">Register</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html">Showcase Forum 2026</a>
+    <a href="about.html">About WEFF</a>
+    <a href="https://www.instagram.com/waseda.weff/" target="_blank" rel="noopener">Instagram</a>
+    <a href="index.html#register">Register →</a>
+  </div>
+
+  <!-- ── Hero ──────────────────────────────────────────── -->
+  <section class="about-hero">
+    <div class="about-hero-photo">
+      <!-- Placeholder shown until weff-team.jpg is added -->
+      <div class="photo-placeholder">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        <span>Add weff-team.jpg to assets/ folder</span>
+      </div>
+    </div>
+    <div class="container">
+      <div class="about-hero-content">
+        <div class="hero-tag">Waseda University · Since 2021</div>
+        <h1>Waseda Economics<br>&amp; Finance Forum</h1>
+        <p>The premier economics and finance organisation for international students of Waseda University — open to students from all Japanese universities.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Stats Bar ──────────────────────────────────────── -->
+  <div class="stats-bar">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-num">2021</div>
+          <div class="stat-desc">Founded</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">1,100+</div>
+          <div class="stat-desc">Instagram Followers</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">All JP</div>
+          <div class="stat-desc">Unis Welcome</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">Tokyo</div>
+          <div class="stat-desc">Shinjuku-ku</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Mission ────────────────────────────────────────── -->
+  <section class="section mission">
+    <div class="container">
+      <span class="section-label">Our Mission</span>
+      <h2 class="section-title">Who We Are</h2>
+      <div class="mission-grid">
+        <div class="mission-text">
+          <p>
+            <strong>Waseda Economics and Finance Forum (WEFF)</strong> is the premier economics and finance organisation for international students of Waseda University.
+          </p>
+          <p>
+            The primary mission of WEFF is to promote the importance of economics and finance by providing a series of venues for members to discuss and engage in issues related to these fields.
+          </p>
+          <p>
+            We offer exclusive lectures, career support, and market updates — and we're open to students from <strong>all Japanese universities</strong>, not just Waseda.
+          </p>
+        </div>
+        <div class="mission-facts">
+          <div class="fact-row">
+            <div class="fact-icon">📍</div>
+            <div>
+              <div class="fact-label">Headquarters</div>
+              <div class="fact-value">Shinjuku-ku, Tokyo, Japan</div>
+            </div>
+          </div>
+          <div class="fact-row">
+            <div class="fact-icon">🎓</div>
+            <div>
+              <div class="fact-label">Membership</div>
+              <div class="fact-value">Open to students of all Japanese universities</div>
+            </div>
+          </div>
+          <div class="fact-row">
+            <div class="fact-icon">📅</div>
+            <div>
+              <div class="fact-label">Founded</div>
+              <div class="fact-value">2021 · Civic and Social Organisation</div>
+            </div>
+          </div>
+          <div class="fact-row">
+            <div class="fact-icon">🌐</div>
+            <div>
+              <div class="fact-label">Focus</div>
+              <div class="fact-value">Economics, Finance &amp; Investment</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── What We Offer ──────────────────────────────────── -->
+  <section class="section offerings">
+    <div class="container">
+      <span class="section-label">What We Offer</span>
+      <h2 class="section-title">Member Benefits</h2>
+      <p class="section-sub">Everything WEFF provides to help members grow in economics and finance.</p>
+      <div class="offerings-grid">
+        <div class="offering-card">
+          <div class="offering-num">01</div>
+          <h3>Exclusive Lectures</h3>
+          <p>In-depth sessions on economics, finance, and investment topics led by industry professionals and alumni.</p>
+        </div>
+        <div class="offering-card">
+          <div class="offering-num">02</div>
+          <h3>Career Support</h3>
+          <p>Guidance on internships, job applications, and career paths in finance and economics — with access to an alumni network.</p>
+        </div>
+        <div class="offering-card">
+          <div class="offering-num">03</div>
+          <h3>Market Updates</h3>
+          <p>Regular curated updates on financial markets, economic trends, and industry developments to keep members informed.</p>
+        </div>
+        <div class="offering-card">
+          <div class="offering-num">04</div>
+          <h3>Events &amp; Forums</h3>
+          <p>Flagship events like the Showcase Forum — platforms to present work, network with professionals, and compete in pitch competitions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Team Photo ─────────────────────────────────────── -->
+  <section class="section team-photo-section">
+    <div class="container">
+      <span class="section-label">Our Community</span>
+      <h2 class="section-title">Meet the Team</h2>
+      <p class="section-sub">WEFF members from across Japanese universities — united by a passion for economics and finance.</p>
+      <div class="team-photo-wrap" id="team-photo-wrap">
+        <!-- TODO: Replace this placeholder by adding assets/weff-team.jpg to the repo,
+             then swap the div below for: <img src="assets/weff-team.jpg" alt="WEFF team photo" /> -->
+        <div class="team-photo-placeholder">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" color="#555"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span style="color:#555">Team photo goes here</span>
+          <code class="upload-hint">Add: assets/weff-team.jpg</code>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Follow Us ──────────────────────────────────────── -->
+  <section class="section social-section">
+    <div class="container">
+      <span class="section-label">Follow Us</span>
+      <h2 class="section-title">Stay Connected</h2>
+      <p class="section-sub">Keep up with WEFF events, updates, and opportunities across our channels.</p>
+      <div class="social-links">
+        <a href="https://www.instagram.com/waseda.weff/" target="_blank" rel="noopener" class="social-btn">
+          <!-- Instagram icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+          </svg>
+          @waseda.weff
+        </a>
+        <a href="https://www.linkedin.com/company/waseda-economics-and-finance-forum-weff/" target="_blank" rel="noopener" class="social-btn">
+          <!-- LinkedIn icon -->
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ───────────────────────────────────────────── -->
+  <section class="section back-cta">
+    <div class="container">
+      <span class="section-label">Next Event</span>
+      <h2 class="section-title">Showcase Forum 2026</h2>
+      <p class="section-sub" style="margin-bottom:32px;">
+        Our flagship annual event — Friday, 1 August 2026 at Waseda University. B&amp;E Symposium, Pitch Competition, and Alumni Networking.
+      </p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="index.html" class="btn btn-primary">View Event Page →</a>
+        <a href="index.html#register" class="btn btn-outline">Register Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ────────────────────────────────────────── -->
+  <footer>
+    <div class="container">
+      <div class="footer-logo"><span>WEFF</span></div>
+      <p class="footer-sub">Waseda Economics and Finance Forum</p>
+      <p class="footer-sub">Shinjuku-ku, Tokyo · Founded 2021</p>
+      <div class="footer-divider"></div>
+      <p class="footer-copy">&copy; 2026 WEFF. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
