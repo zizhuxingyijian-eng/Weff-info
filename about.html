@@ -24,19 +24,15 @@
       position: absolute;
       inset: 0;
       background-color: #2a1a08;
-      /* TODO: uncomment the line below once you add assets/weff-team.jpg to the repo */
-      /* background-image: url('assets/weff-team.jpg'); */
+      background-image: url('assets/weff-team.jpg');
       background-size: cover;
       background-position: center top;
     }
-    .about-hero-photo.has-photo::after {
+    .about-hero-photo::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(26,26,26,0.92) 0%, rgba(26,26,26,0.45) 60%, rgba(26,26,26,0.2) 100%);
-    }
-    .about-hero-photo:not(.has-photo) {
-      background: linear-gradient(135deg, #1a1a1a 0%, #2a1a08 50%, #3a2010 100%);
+      background: linear-gradient(to top, rgba(26,26,26,0.95) 0%, rgba(26,26,26,0.55) 55%, rgba(26,26,26,0.2) 100%);
     }
     .photo-placeholder {
       position: absolute;
@@ -296,13 +292,7 @@
 
   <!-- ── Hero ──────────────────────────────────────────── -->
   <section class="about-hero">
-    <div class="about-hero-photo">
-      <!-- Placeholder shown until weff-team.jpg is added -->
-      <div class="photo-placeholder">
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-        <span>Add weff-team.jpg to assets/ folder</span>
-      </div>
-    </div>
+    <div class="about-hero-photo"></div>
     <div class="container">
       <div class="about-hero-content">
         <div class="hero-tag">Waseda University · Since 2021</div>
@@ -425,13 +415,7 @@
       <h2 class="section-title">Meet the Team</h2>
       <p class="section-sub">WEFF members from across Japanese universities — united by a passion for economics and finance.</p>
       <div class="team-photo-wrap" id="team-photo-wrap">
-        <!-- TODO: Replace this placeholder by adding assets/weff-team.jpg to the repo,
-             then swap the div below for: <img src="assets/weff-team.jpg" alt="WEFF team photo" /> -->
         <img src="assets/weff-team.jpg" alt="WEFF team photo" />
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" color="#555"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          <span style="color:#555">Team photo goes here</span>
-          <code class="upload-hint">Add: assets/weff-team.jpg</code>
-        </div>
       </div>
     </div>
   </section>
