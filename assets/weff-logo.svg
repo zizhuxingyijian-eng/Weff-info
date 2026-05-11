@@ -1,20 +1,19 @@
 <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100" height="100" fill="#C8620A" rx="10"/>
-  <!-- White vertical bars -->
-  <rect x="5"  y="60" width="6" height="32" fill="white"/>
-  <rect x="13" y="46" width="6" height="46" fill="white"/>
-  <rect x="21" y="33" width="6" height="59" fill="white"/>
-  <rect x="29" y="50" width="6" height="42" fill="white"/>
-  <rect x="37" y="64" width="6" height="28" fill="white"/>
-  <rect x="45" y="54" width="6" height="38" fill="white"/>
-  <rect x="53" y="60" width="6" height="32" fill="white"/>
-  <rect x="61" y="48" width="6" height="44" fill="white"/>
-  <rect x="69" y="36" width="6" height="56" fill="white"/>
-  <rect x="77" y="20" width="6" height="72" fill="white"/>
-  <rect x="85" y="28" width="6" height="64" fill="white"/>
-  <!-- Two crossing curves -->
-  <path d="M 5 76 Q 30 28 52 50 Q 72 72 95 40" stroke="#9A4808" stroke-width="2.8" fill="none" stroke-linecap="round"/>
-  <path d="M 5 26 Q 30 70 52 50 Q 72 30 95 60" stroke="#9A4808" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+  <rect width="100" height="100" fill="#C8620A"/>
+  <!-- White bars — all baseline at y=92, varying heights -->
+  <rect x="4"  y="56" width="7" height="36" fill="white"/>
+  <rect x="13" y="28" width="7" height="64" fill="white"/>
+  <rect x="22" y="44" width="7" height="48" fill="white"/>
+  <rect x="31" y="32" width="7" height="60" fill="white"/>
+  <rect x="40" y="66" width="7" height="26" fill="white"/>
+  <rect x="49" y="50" width="7" height="42" fill="white"/>
+  <rect x="58" y="68" width="7" height="24" fill="white"/>
+  <rect x="67" y="50" width="7" height="42" fill="white"/>
+  <rect x="76" y="36" width="7" height="56" fill="white"/>
+  <rect x="85" y="14" width="7" height="78" fill="white"/>
+  <!-- Two smooth diagonal crossing lines -->
+  <path d="M 4 84 C 35 70 65 34 96 16" stroke="#8B4200" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+  <path d="M 4 16 C 35 34 65 70 96 84" stroke="#8B4200" stroke-width="2.4" fill="none" stroke-linecap="round"/>
   <!-- Intersection dot -->
-  <circle cx="52" cy="50" r="5.5" fill="#E8A870"/>
+  <circle cx="50" cy="50" r="5" fill="#E8965A"/>
 </svg>
