@@ -264,7 +264,7 @@
       flex-shrink: 0;
     }
     .past-event-logo { flex-shrink: 0; line-height: 0; }
-    .past-event-logo svg { height: 30px; width: auto; }
+    .past-event-logo svg { height: 36px; width: auto; max-width: 110px; }
     .past-event-banner h3 {
       font-size: 1.05rem;
       font-weight: 800;
@@ -541,11 +541,12 @@
           <div class="past-event-banner">
             <div class="past-event-banner-top">
               <div class="past-event-tag">Shukatsu Talk</div>
-              <!-- BlackRock wordmark -->
+              <!-- BlackRock wordmark (white bg, black text matching actual logo) -->
               <div class="past-event-logo">
-                <svg viewBox="0 0 130 36" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="BlackRock">
-                  <rect width="130" height="36" fill="#000" rx="4"/>
-                  <text x="10" y="26" font-family="Arial,sans-serif" font-weight="900" font-size="19" fill="#fff" letter-spacing="-0.3">BlackRock</text>
+                <svg viewBox="0 0 210 52" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="BlackRock">
+                  <rect width="210" height="52" fill="#fff" rx="5"/>
+                  <text x="12" y="38" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="900" font-size="32" fill="#000" letter-spacing="-0.5">BlackRock</text>
+                  <text x="193" y="22" font-family="Arial,sans-serif" font-size="12" font-weight="400" fill="#000">®</text>
                 </svg>
               </div>
             </div>
@@ -570,13 +571,50 @@
           <div class="past-event-banner">
             <div class="past-event-banner-top">
               <div class="past-event-tag">WEFF Talk</div>
-              <!-- Federal Reserve Board badge -->
+              <!-- Federal Reserve System seal -->
               <div class="past-event-logo">
-                <svg viewBox="0 0 130 36" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Federal Reserve Board">
-                  <rect width="130" height="36" fill="#002868" rx="4"/>
-                  <text x="65" y="13" font-family="Arial,sans-serif" font-weight="700" font-size="7.5" fill="#fff" text-anchor="middle" letter-spacing="0.4">FEDERAL RESERVE</text>
-                  <line x1="10" y1="17" x2="120" y2="17" stroke="rgba(255,255,255,0.3)" stroke-width="0.6"/>
-                  <text x="65" y="28" font-family="Arial,sans-serif" font-weight="700" font-size="7.5" fill="#BF0A30" text-anchor="middle" letter-spacing="0.6">BOARD</text>
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Federal Reserve System">
+                  <defs>
+                    <path id="fed-arc-top" d="M 9,50 A 41,41 0 0,1 91,50"/>
+                    <path id="fed-arc-bot" d="M 15,56 A 36,36 0 0,0 85,56"/>
+                  </defs>
+                  <!-- Outer filled ring -->
+                  <circle cx="50" cy="50" r="49" fill="#111"/>
+                  <!-- White inner area -->
+                  <circle cx="50" cy="50" r="41" fill="#fff"/>
+                  <!-- Inner thin ring -->
+                  <circle cx="50" cy="50" r="36" fill="none" stroke="#111" stroke-width="1"/>
+                  <!-- Circular text top: UNITED STATES · FEDERAL RESERVE -->
+                  <text font-family="Arial,sans-serif" font-size="6.8" font-weight="800" fill="#fff" letter-spacing="0.8">
+                    <textPath href="#fed-arc-top" startOffset="1%">UNITED STATES · FEDERAL RESERVE</textPath>
+                  </text>
+                  <!-- Circular text bottom: SYSTEM -->
+                  <text font-family="Arial,sans-serif" font-size="6.8" font-weight="800" fill="#fff" letter-spacing="2.5">
+                    <textPath href="#fed-arc-bot" startOffset="28%">SYSTEM</textPath>
+                  </text>
+                  <!-- Eagle wings -->
+                  <path d="M 17,57 C 22,42 36,37 50,45 C 64,37 78,42 83,57 C 75,53 67,54 62,60 L 57,69 C 55,73 52,75 50,76 C 48,75 45,73 43,69 L 38,60 C 33,54 25,53 17,57 Z" fill="#111"/>
+                  <!-- Eagle head -->
+                  <circle cx="50" cy="40" r="7.5" fill="#111"/>
+                  <!-- Beak -->
+                  <path d="M 54,41 L 62,45 L 59,48 L 54,44 Z" fill="#111"/>
+                  <!-- Eye -->
+                  <circle cx="53" cy="39" r="1.8" fill="#fff"/>
+                  <!-- Shield on chest -->
+                  <path d="M 44,52 H 56 L 57,63 Q 50,68 43,63 Z" fill="#fff" stroke="#111" stroke-width="0.8"/>
+                  <!-- Shield stripes -->
+                  <line x1="44.2" y1="56.5" x2="55.8" y2="56.5" stroke="#111" stroke-width="0.8"/>
+                  <line x1="43.5" y1="60.5" x2="56.5" y2="60.5" stroke="#111" stroke-width="0.8"/>
+                  <!-- Left talon: olive branch -->
+                  <path d="M 42,70 Q 36,74 30,79" stroke="#111" stroke-width="2" fill="none" stroke-linecap="round"/>
+                  <ellipse cx="37" cy="73" rx="2.5" ry="1.5" fill="#111" transform="rotate(-30,37,73)"/>
+                  <ellipse cx="32" cy="77" rx="2.5" ry="1.5" fill="#111" transform="rotate(-30,32,77)"/>
+                  <!-- Right talon: arrows -->
+                  <line x1="58" y1="70" x2="68" y2="78" stroke="#111" stroke-width="1.8" stroke-linecap="round"/>
+                  <line x1="61" y1="68" x2="71" y2="76" stroke="#111" stroke-width="1.8" stroke-linecap="round"/>
+                  <line x1="64" y1="66" x2="74" y2="74" stroke="#111" stroke-width="1.8" stroke-linecap="round"/>
+                  <!-- Stars above eagle -->
+                  <text x="50" y="31" text-anchor="middle" font-family="Arial" font-size="5.5" fill="#111" letter-spacing="3">★★★★★</text>
                 </svg>
               </div>
             </div>
