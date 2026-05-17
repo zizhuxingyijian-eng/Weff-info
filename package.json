@@ -1,0 +1,11 @@
+{
+  "name": "weff-info",
+  "version": "1.0.0",
+  "description": "WEFF Showcase Forum 2026 static site",
+  "scripts": {
+    "start": "npx serve . -p 8000",
+    "dev": "npx serve . -p 8000 --no-clipboard"
+  },
+  "keywords": [],
+  "license": "UNLICENSED"
+}
