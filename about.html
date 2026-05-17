@@ -282,14 +282,6 @@
       align-items: flex-start;
       gap: 16px;
     }
-    .past-event-speaker-img {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      object-fit: cover;
-      flex-shrink: 0;
-      border: 2px solid var(--orange);
-    }
     .past-event-speaker-placeholder {
       width: 64px;
       height: 64px;
@@ -306,10 +298,9 @@
       width: 64px;
       height: 64px;
       border-radius: 50%;
-      object-fit: cover;
-      object-position: center top;
       flex-shrink: 0;
       border: 2px solid var(--orange);
+      background-repeat: no-repeat;
     }
     .past-event-speaker-name {
       font-size: 0.95rem;
@@ -549,9 +540,9 @@
             <div class="past-event-meta">May 26, 2021 &nbsp;·&nbsp; 20:00–21:00 JST &nbsp;·&nbsp; Online (Zoom)</div>
           </div>
           <div class="past-event-body">
-            <img src="assets/speaker-buya.jpg" alt="Buyandelger Gan-Ulzii" class="past-event-speaker-img"
-                 style="object-position: 0% center;"
-                 onerror="this.outerHTML='<div class=&quot;past-event-speaker-placeholder&quot;>👤</div>'" />
+            <!-- circle diameter ~200px at origin (110,135); scale=64/200=0.32 → bg 227x86, offset -3px -11px -->
+            <div class="past-event-speaker-img" role="img" aria-label="Buyandelger Gan-Ulzii"
+                 style="background-image:url('assets/speaker-buya.jpg');background-size:227px 86px;background-position:-3px -11px;"></div>
             <div>
               <div class="past-event-speaker-name">Buyandelger Gan-Ulzii</div>
               <div class="past-event-speaker-role">Product Strategist, Multi-Asset Strategies and Solutions<br>Blackrock Japan</div>
@@ -575,9 +566,9 @@
             <div class="past-event-meta">April 16, 2022 &nbsp;·&nbsp; 9:00 AM JST &nbsp;·&nbsp; Online (Zoom)</div>
           </div>
           <div class="past-event-body">
-            <img src="assets/speaker-ingrid.jpg" alt="Ingrid Tang" class="past-event-speaker-img"
-                 style="object-position: 100% center;"
-                 onerror="this.outerHTML='<div class=&quot;past-event-speaker-placeholder&quot;>👤</div>'" />
+            <!-- circle diameter ~180px at origin (285,95); scale=64/180=0.356 → bg 134x69, offset -70px -2px -->
+            <div class="past-event-speaker-img" role="img" aria-label="Ingrid Tang"
+                 style="background-image:url('assets/speaker-ingrid.jpg');background-size:134px 69px;background-position:-70px -2px;"></div>
             <div>
               <div class="past-event-speaker-name">Ingrid Tang</div>
               <div class="past-event-speaker-role">Senior Financial Analyst<br>Federal Reserve Board, Washington D.C.</div>
